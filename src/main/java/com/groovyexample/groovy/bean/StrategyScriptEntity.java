@@ -1,42 +1,42 @@
 package com.groovyexample.groovy.bean;
 
-import java.util.Date;
 import lombok.Data;
-import org.apache.commons.lang.StringUtils;
+
+import java.util.Date;
 
 /**
  * script DTO
  */
 @Data
 public class StrategyScriptEntity {
-  /**
-   * 策略id
-   */
-  private Integer strategyId;
+    /**
+     * 策略id
+     */
+    private Integer strategyId;
 
-  /**
-   * 脚本内容
-   */
-  private String script;
+    /**
+     * 脚本内容
+     */
+    private String script;
 
-  /**
-   * 变量名称，类型json
-   */
-  private String variables;
+    /**
+     * 变量名称，类型json
+     */
+    private String variables;
 
-  /**
-   * 作者
-   */
-  private String author;
+    /**
+     * 作者
+     */
+    private String author;
 
-  /**
-   * 创建时间
-   */
-  private Date createTime;
+    /**
+     * 创建时间
+     */
+    private Date createTime;
 
-  /**
-   * 更新时间
-   */
-  private Date updateTime;
+    /**
+     * 更新时间
+     */
+    private Date updateTime;
 
 }

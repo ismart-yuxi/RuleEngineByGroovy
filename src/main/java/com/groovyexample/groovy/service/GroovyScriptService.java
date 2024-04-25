@@ -1,44 +1,49 @@
 package com.groovyexample.groovy.service;
 
 
-import com.groovyexample.groovy.bean.ScriptVariable;
 import com.groovyexample.groovy.bean.RuleEngineExecuteContext;
+import com.groovyexample.groovy.bean.ScriptVariable;
 import com.groovyexample.groovy.bean.StrategyScriptEntity;
+
 import java.util.List;
 
 public interface GroovyScriptService {
 
-  Object  fragmentEval(RuleEngineExecuteContext context,Integer strategyId);
+    Object fragmentEval(RuleEngineExecuteContext context, Integer strategyId);
 
-  boolean booleanScript(RuleEngineExecuteContext context,Integer strategyId);
-  /**
-   * 存储执行脚本片段和变量
-   * @param strategyId
-   * @param script
-   * @param variables
-   */
-  void saveVariables(Integer strategyId, String script, List<ScriptVariable> variables, String author);
+    boolean booleanScript(RuleEngineExecuteContext context, Integer strategyId);
 
-  StrategyScriptEntity queryByStrategyId(Integer strategyId);
+    /**
+     * 存储执行脚本片段和变量
+     *
+     * @param strategyId
+     * @param script
+     * @param variables
+     */
+    void saveVariables(Integer strategyId, String script, List<ScriptVariable> variables, String author);
 
-  List<StrategyScriptEntity> queryByStrategyIds(List<Integer> strategyIds);
+    StrategyScriptEntity queryByStrategyId(Integer strategyId);
 
-  /**
-   * 测试脚本
-   * @param scriptText
-   * @return
-   */
-  boolean scriptTest(String scriptText);
+    List<StrategyScriptEntity> queryByStrategyIds(List<Integer> strategyIds);
 
-  /**
-   * 加载数据库所有脚本
-   */
-  void loadScript();
+    /**
+     * 测试脚本
+     *
+     * @param scriptText
+     * @return
+     */
+    boolean scriptTest(String scriptText);
 
-  /**
-   * 加载数据库所有未停用的脚本
-   * @param isInit 是否初始化调用
-   * @return 成功加载脚本个数
-   */
-  int loadValidScript(boolean isInit);
+    /**
+     * 加载数据库所有脚本
+     */
+    void loadScript();
+
+    /**
+     * 加载数据库所有未停用的脚本
+     *
+     * @param isInit 是否初始化调用
+     * @return 成功加载脚本个数
+     */
+    int loadValidScript(boolean isInit);
 }
